@@ -4,6 +4,7 @@ class Futbolista  implements Comparable{
     //Atributos: Dni, nombre, edad, número de goles
     String dni, nombre;
     int edad, numeroGoles;
+    private Futbolista Objects;
 
     public Futbolista(String dni, String nombre, int edad, int numeroGoles){
         this.dni = dni;
