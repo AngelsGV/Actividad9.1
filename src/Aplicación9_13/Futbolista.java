@@ -17,10 +17,17 @@ class Futbolista  implements Comparable{
         //el \n del final es para que cada futbolista vaya en una línea distinta :) (como en el libro Resuelto9.7)
     }
     @Override
-    public boolean equals(){
+    public boolean equals(Object o) {
         // En equals es boolean porque las respuestas que nos debe dar es si lo es o no.
-
-
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Futbolista that = (Futbolista) o;
+        return Objects.equals(dni, that.dni);
     }
 
+    @Override
+    public int compareTo(Object o) {
+        return 0;
+    }
 }
+
