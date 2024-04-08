@@ -16,7 +16,7 @@ class Futbolista implements Comparable {
         return dni;
     }
     @Override
-    public String toString(){
+    public String toString(){//Sirve para poder mostrar los datos
         return "DNI: " + dni + " Nombre: " + nombre + " Edad: " + edad + " Número de goles: " + numeroGoles + "\n";
         //el \n del final es para que cada futbolista vaya en una línea distinta :) (como en el libro Resuelto9.7)
         // tmb se puede hacer como String cad;
