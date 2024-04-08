@@ -20,7 +20,7 @@ class Futbolista  implements Comparable{
         // return cad; --> Simplifico codigo como lo tengo
     }
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(Object o) { //pag 262 --> otras maneras de hacerlo
         // En equals es boolean porque las respuestas que nos debe dar es si lo es o no.
         if (this == o) return true; //si dni de o es el dni introducido, ok
         if (o == null) return false;//si o nulo, false
@@ -31,9 +31,10 @@ class Futbolista  implements Comparable{
         //Si falla, será esta parte del codigo --> Pues no, lo he probado fraccionado antes de adelantar y all OK.
     }
 
-    @Override
+    @Override //me lo implementa IntelliJ por haberlo usado en eguals()
     public int compareTo(Object o) {
         return 0;
     }
+
 }
 
