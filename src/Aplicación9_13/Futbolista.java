@@ -1,6 +1,6 @@
 package Aplicación9_13;
 
-class Futbolista  implements Comparable{
+class Futbolista implements Comparable {
     //Atributos: Dni, nombre, edad, número de goles
     String dni, nombre;
     int edad, numeroGoles;
@@ -9,7 +9,11 @@ class Futbolista  implements Comparable{
         this.dni = dni;
         this.nombre = nombre;
         this.edad = edad;
-        this.numeroGoles = numeroGoles;
+        this.numeroGoles = numeroGoles; //No empieza en 0 porque va por temporada, es decir, son los que son.
+    }
+    //Getters i Setters
+    public String getDni(){
+        return dni;
     }
     @Override
     public String toString(){
@@ -23,18 +27,25 @@ class Futbolista  implements Comparable{
     public boolean equals(Object o) { //pag 262 --> otras maneras de hacerlo
         // En equals es boolean porque las respuestas que nos debe dar es si lo es o no.
         if (this == o) return true; //si dni de o es el dni introducido, ok
-        if (o == null) return false;//si o nulo, false
+       // if (o == null) return false;//si o nulo, false
         //Aquí he tenido problemas :)
         if (this != o) return false;
         Futbolista nuevoFut = (Futbolista) o;
-        return dni.equals(nuevoFut);
+        return dni.equals(nuevoFut.getDni());
         //Si falla, será esta parte del codigo --> Pues no, lo he probado fraccionado antes de adelantar y all OK.
     }
 
-    @Override //me lo implementa IntelliJ por haberlo usado en eguals()
-    public int compareTo(Object o) {
-        return 0;
+  //  @Override //me lo implementa IntelliJ por haberlo usado en eguals()
+  //      public int compareTo(Object o) {
+      //  return 0;
+  //  }
+    //Interfaz comparable --> Pag 289
+    @Override
+    public int compareTo(Object fut) { //No hace falta crear una interfaz a parte porque ya están implementadas en Objeto por defecto.
+        Futbolista otroFutbolista = (Futbolista) fut;
+        return this.dni.compareTo(otroFutbolista.getDni());
     }
+
 
 }
 
