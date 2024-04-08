@@ -19,7 +19,7 @@ public class Main {
 
         // Menú para seleccionar el tipo de ordenamiento
         while (true) {
-            System.out.println("\nMenú de ordenamiento:");
+            System.out.println("\n Menú de ordenamiento:");
             System.out.println("1. Ordenar por DNI");
             System.out.println("2. Ordenar por nombre");
             System.out.println("3. Ordenar por edad");
