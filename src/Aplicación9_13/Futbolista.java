@@ -1,5 +1,4 @@
 package Aplicación9_13;
-import java.util.Arrays;
 import java.util.Comparator;
 
 class Futbolista implements Comparable {
@@ -60,12 +59,16 @@ class Futbolista implements Comparable {
 
     public class ComparadorNombre implements Comparator {
         @Override
-        public int compare(Object fut1, Object fut2){
-            return (((Futbolista)fut1).getNombre() - ((Futbolista)fut2).getNombre();
+        public int compare(Object fut1, Object fut2) {
+            String nombre1 = ((Futbolista) fut1).getNombre();
+            String nombre2 = ((Futbolista) fut2).getNombre();
+            return nombre1.compareTo(nombre2);
+            //La única solució que he vist. usar compareTo() per el String
         }
     }
     public class ComparadorEdad implements Comparator {
         @Override
+        //Este si que el he fet com me diu el llibre
         public int compare(Object fut1, Object fut2){
         return  ((Futbolista) fut1).edad - ((Futbolista) fut2).edad;
         }
