@@ -20,10 +20,14 @@ class Futbolista  implements Comparable{
     @Override
     public boolean equals(Object o) {
         // En equals es boolean porque las respuestas que nos debe dar es si lo es o no.
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Futbolista that = (Futbolista) o;
-        return Objects.equals(dni, that.dni);
+        if (this == o) return true; //si dni de o es el dni introducido, ok
+        if (o == null) return false;//si o nulo, false
+        //Aquí he tenido problemas :)
+        if (this != o) return false;
+        Futbolista nuevoFut = (Futbolista) o;
+        return dni.equals(nuevoFut);
+        //Si falla, será esta parte del codigo
+
     }
 
     @Override

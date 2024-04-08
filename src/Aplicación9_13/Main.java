@@ -1,19 +1,23 @@
 package Aplicación9_13;
-
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Intro with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        // Crear algunos futbolistas
+        Futbolista fut1 = new Futbolista("11111111A", "Messi", 34, 780);
+        Futbolista fut2 = new Futbolista("12345678B", "Cristiano Ronaldo", 36, 760);
+        Futbolista fut3 = new Futbolista("15376483C", "Neymar", 29, 280);
 
-        // Press Mayús+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        // Mostrar los detalles de los futbolistas
+        System.out.println("Detalles de los futbolistas:");
+        System.out.println(fut1);
+        System.out.println(fut2);
+        System.out.println(fut3);
 
-            // Press Mayús+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        // Comparar dos futbolistas
+        System.out.println("\nComparando dos futbolistas:");
+        if (fut1.equals(fut2)) {
+            System.out.println("El futbolista 1 es igual al futbolista 2");
+        } else {
+            System.out.println("El futbolista 1 no es igual al futbolista 2");
         }
     }
 }
