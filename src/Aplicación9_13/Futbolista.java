@@ -21,6 +21,12 @@ class Futbolista implements Comparable {
     public String getNombre(){
         return nombre;
     }
+    public int getEdad(){
+        return edad;
+    }
+    public int getNumeroGoles(){
+        return numeroGoles;
+    }
 
     @Override
     public String toString() {//Sirve para poder mostrar los datos
