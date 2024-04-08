@@ -21,11 +21,14 @@ public class Main {
         }
         // Interfaz Comparable por el DNI
         System.out.println("\nOrdenando futbolistas por DNI:");
-        if (fut1.compareTo(fut2) < 0) {
+        //fut1 va antes que fut2
+        if (fut1.compareTo(fut2) < 0) { //esto se hace porque devuelve un numero entero.
             System.out.println("El futbolista 1 tiene un número de DNI anterior al futbolista 2");
+        //fut1 va después que fut2
         } else if (fut1.compareTo(fut2) > 0) {
             System.out.println("El futbolista 1 tiene un número DNI posterior al futbolista 2");
         } else {
+            //fut1 es igual a fut2
             System.out.println("Los futbolistas tienen el mismo DNI");
     }
 }
