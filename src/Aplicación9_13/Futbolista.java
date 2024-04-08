@@ -4,8 +4,7 @@ class Futbolista  implements Comparable{
     //Atributos: Dni, nombre, edad, número de goles
     String dni, nombre;
     int edad, numeroGoles;
-    private Futbolista Objects;
-
+    //Constructor
     public Futbolista(String dni, String nombre, int edad, int numeroGoles){
         this.dni = dni;
         this.nombre = nombre;
@@ -16,6 +15,9 @@ class Futbolista  implements Comparable{
     public String toString(){
         return "DNI: " + dni + " Nombre: " + nombre + " Edad: " + edad + " Número de goles: " + numeroGoles + "\n";
         //el \n del final es para que cada futbolista vaya en una línea distinta :) (como en el libro Resuelto9.7)
+        // tmb se puede hacer como String cad;
+        // cad = ....;
+        // return cad; --> Simplifico codigo como lo tengo
     }
     @Override
     public boolean equals(Object o) {
@@ -26,8 +28,7 @@ class Futbolista  implements Comparable{
         if (this != o) return false;
         Futbolista nuevoFut = (Futbolista) o;
         return dni.equals(nuevoFut);
-        //Si falla, será esta parte del codigo
-
+        //Si falla, será esta parte del codigo --> Pues no, lo he probado fraccionado antes de adelantar y all OK.
     }
 
     @Override
