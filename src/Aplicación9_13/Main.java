@@ -1,10 +1,8 @@
 package Aplicación9_13;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Scanner;
-
-import static java.util.Collections.sort;
+import static java.util.Collections.sort;//me lo ha puesto IntelliJ
 
 public class Main {
     public static void main(String[] args) {
