@@ -57,7 +57,7 @@ class Futbolista implements Comparable {
     //Comparator--> pag 293
     //Para listados ordenados de manera creciente
 
-    public class ComparadorNombre implements Comparator {
+    public static class ComparadorNombre implements Comparator {
         @Override
         public int compare(Object fut1, Object fut2) {
             String nombre1 = ((Futbolista) fut1).getNombre();
@@ -66,7 +66,7 @@ class Futbolista implements Comparable {
             //La única solució que he vist. usar compareTo() per el String
         }
     }
-    public class ComparadorEdad implements Comparator {
+    public static class ComparadorEdad implements Comparator {
         @Override
         //Este si que el he fet com me diu el llibre
         public int compare(Object fut1, Object fut2){

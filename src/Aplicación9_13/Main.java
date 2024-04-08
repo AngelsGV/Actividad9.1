@@ -1,35 +1,65 @@
 package Aplicación9_13;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        // Crear algunos futbolistas
-        Futbolista fut1 = new Futbolista("11111111A", "Messi", 34, 780);
-        Futbolista fut2 = new Futbolista("12345678B", "Cristiano Ronaldo", 36, 760);
-        Futbolista fut3 = new Futbolista("15376483C", "Neymar", 29, 280);
+        // Crear una tabla de futbolistas con 5 futbolistas
+        ArrayList<Futbolista> tablaFutbolistas = new ArrayList<>();
+        tablaFutbolistas.add(new Futbolista("12345678A", "Lionel Messi", 34, 700));
+        tablaFutbolistas.add(new Futbolista("98765432B", "Cristiano Ronaldo", 36, 760));
+        tablaFutbolistas.add(new Futbolista("24681357C", "Neymar Jr", 29, 200));
+        tablaFutbolistas.add(new Futbolista("13579246D", "Robert Lewandowski", 33, 550));
+        tablaFutbolistas.add(new Futbolista("56789123E", "Kylian Mbappé", 23, 300));
 
-        // Mostrar datos
-        System.out.println("Futbolistas:");
-        System.out.println(fut1);
-        System.out.println(fut2);
-        System.out.println(fut3);
+        // Crear un objeto Scanner para la entrada del usuario
+        Scanner scanner = new Scanner(System.in);
 
-        // Comparar dos futbolistas
-        System.out.println("\nComparando dos futbolistas:");
-        if (fut1.equals(fut2)) {
-            System.out.println("El futbolista 1 es igual al futbolista 2");
-        } else {
-            System.out.println("El futbolista 1 no es igual al futbolista 2");
+        // Menú para seleccionar el tipo de ordenamiento
+        while (true) {
+            System.out.println("\nMenú de ordenamiento:");
+            System.out.println("1. Ordenar por DNI");
+            System.out.println("2. Ordenar por nombre");
+            System.out.println("3. Ordenar por edad");
+            System.out.println("4. Salir");
+            System.out.print("Seleccione una opción: ");
+
+            // Leer la opción seleccionada por el usuario
+            int opcion = scanner.nextInt();
+
+            // Procesar la opción seleccionada
+            switch (opcion) {
+                case 1:
+                    // Ordenar por DNI
+                    Collections.sort(tablaFutbolistas);
+                    System.out.println("\nTabla de futbolistas ordenada por DNI:");
+                    break;
+                case 2:
+                    // Ordenar por nombre
+                    Collections.sort(tablaFutbolistas, new Futbolista.ComparadorNombre());
+                    System.out.println("\nTabla de futbolistas ordenada por nombre:");
+                    break;
+                case 3:
+                    // Ordenar por edad
+                    Collections.sort(tablaFutbolistas, new Futbolista.ComparadorEdad());
+                    System.out.println("\nTabla de futbolistas ordenada por edad:");
+                    break;
+                case 4:
+                    // Salir del programa
+                    System.out.println("Saliendo del programa...");
+                    System.exit(0);
+                default:
+                    // Opción inválida
+                    System.out.println("Opción inválida. Por favor, seleccione una opción válida.");
+                    break;
+            }
+
+            // Mostrar la tabla de futbolistas ordenada
+            for (Futbolista futbolista : tablaFutbolistas) {
+                System.out.println(futbolista);
+            }
         }
-        // Interfaz Comparable por el DNI
-        System.out.println("\nOrdenando futbolistas por DNI:");
-        //fut1 va antes que fut2
-        if (fut1.compareTo(fut2) < 0) { //esto se hace porque devuelve un numero entero.
-            System.out.println("El futbolista 1 tiene un número de DNI anterior al futbolista 2");
-        //fut1 va después que fut2
-        } else if (fut1.compareTo(fut2) > 0) {
-            System.out.println("El futbolista 1 tiene un número DNI posterior al futbolista 2");
-        } else {
-            //fut1 es igual a fut2
-            System.out.println("Los futbolistas tienen el mismo DNI");
     }
-}
 }
